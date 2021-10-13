@@ -58,7 +58,7 @@ Veja também:
 * [Tipos de dados]("")
 * [???](")
 
-###Criação da database:
+### Criação da database:
 
 ```java
 public class MyApplication {
@@ -70,10 +70,10 @@ public class MyApplication {
 }
 ```
 
-###Criação de tabelas:
+### Criação de tabelas:
 
 
-####Exemplos:
+#### Exemplos:
 ```java
 @Table(name = "myplugin_users") // Nome da tabela.
 public class User {
