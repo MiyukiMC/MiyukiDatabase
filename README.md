@@ -29,9 +29,6 @@ Ultima versão: [Download]("")
 Para versões antigas do gradle, use _'compile'_ em vez de _'implementation'_
 
 ```gradle
-dependencies {
-    implementation("miyuki.database:MiyukiDatabase:1.0.0")
-}
 
 repositories {
     mavenCentral()
@@ -40,6 +37,10 @@ repositories {
         name 'miyukidatabase'
         url ''
     }
+}
+
+dependencies {
+    implementation("miyuki.database:MiyukiDatabase:1.0.0")
 }
 ```
 
@@ -53,35 +54,44 @@ Neste framework contamos com 5 tipos de database, são eles:
 * H2
 * MariaDB
 
-Acesse também:
-
+Veja também:
 * [Tipos de dados]("")
-* [???]("")
+* [???](")
 
-Criação da database:
+###Criação da database:
 
 ```java
-@Override
-public onEnable() {
+public class MyApplication {
+    
+    public static void main(String[] args) {
+        
+    }
     
 }
 ```
 
-Criação de tabelas:
+###Criação de tabelas:
 
+
+####Exemplos:
 ```java
 @Table(name = "myplugin_users") // Nome da tabela.
 public class User {
     
     // opção de ser key primária.
     @PrimaryKey
-    // type = o tipo da coluna. se for varchar, pode colocar o tamanho.
-    @Column(type = ColumnType.VARCHAR, size = 16) 
+    
+    // type = o tipo da coluna, se for varchar, necessário colocar o size.
+    @Column(type = ColumnType.VARCHAR, size = 16)
     private String name;
+    
+    @Column(type = ColumnType.INTEGER)
+    private int age;
     
     @Column(type = ColumnType.VARCHAR, size = 32)
     private String password;
     
+    // Getters & Setters...
 }
 ```
 
